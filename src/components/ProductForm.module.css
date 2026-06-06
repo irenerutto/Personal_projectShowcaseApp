@@ -1,0 +1,29 @@
+.form {
+  max-width: 420px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.button {
+  background: #6f4e37;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+}
+
+.button:hover {
+  background: #563a2a;
+}

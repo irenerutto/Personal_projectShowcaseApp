@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Vanilla Bean",
+      "description": "Medium roast with smooth flavor",
+      "origin": "Colombia",
+      "price": "15"
+    },
+    {
+      "id": "2",
+      "name": "House Blend",
+      "description": "Dark roast with rich flavor",
+      "origin": "Kenya",
+      "price": "6"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
