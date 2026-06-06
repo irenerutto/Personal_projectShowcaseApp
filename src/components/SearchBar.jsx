@@ -8,6 +8,7 @@ function SearchBar({ search, setSearch }) {
         type="text"
         placeholder="Search coffee..."
         value={search}
+        // updates search state as user types
         onChange={(e) => setSearch(e.target.value)}
       />
 

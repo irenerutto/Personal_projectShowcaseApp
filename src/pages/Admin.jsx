@@ -1,12 +1,12 @@
 import { useState } from "react";
 import useProducts from "../hooks/useProducts";
+import ProductList from "../components/ProductList";
 
 function Admin() {
   const { products, setProducts } = useProducts();
   const [editId, setEditId] = useState(null);
   const [newPrice, setNewPrice] = useState("");
-
-  // DELETE product
+// deletes product from backend and updates UI immediately
   const handleDelete = (id) => {
     fetch(`http://localhost:3001/products/${id}`, {
       method: "DELETE",
@@ -14,14 +14,12 @@ function Admin() {
 
     setProducts(products.filter((p) => p.id !== id));
   };
-
-  // START edit
+// enables edit mode for selected product
   const startEdit = (product) => {
     setEditId(product.id);
     setNewPrice(product.price);
   };
-
-  // SAVE edit (PATCH)
+// updates product price in backend and local state
   const saveEdit = (id) => {
     fetch(`http://localhost:3001/products/${id}`, {
       method: "PATCH",
@@ -42,36 +40,36 @@ function Admin() {
     <div>
       <h1>Admin Dashboard</h1>
 
-      {products.map((product) => (
-        <div key={product.id}>
-          <h3>{product.name}</h3>
+      <div>
+        {products.map((product) => (
+          <div key={product.id}>
+            <h3>{product.name}</h3>
+            <p>{product.description}</p>
 
-          <p>{product.description}</p>
+            {editId === product.id ? (
+              <div>
+                <input
+                  value={newPrice}
+                  onChange={(e) => setNewPrice(e.target.value)}
+                />
+                <button onClick={() => saveEdit(product.id)}>
+                  Save
+                </button>
+              </div>
+            ) : (
+              <p>${product.price}</p>
+            )}
 
-          {/* EDIT PRICE */}
-          {editId === product.id ? (
-            <div>
-              <input
-                value={newPrice}
-                onChange={(e) => setNewPrice(e.target.value)}
-              />
-              <button onClick={() => saveEdit(product.id)}>
-                Save
-              </button>
-            </div>
-          ) : (
-            <p>${product.price}</p>
-          )}
+            <button onClick={() => startEdit(product)}>
+              Edit Price
+            </button>
 
-          <button onClick={() => startEdit(product)}>
-            Edit Price
-          </button>
-
-          <button onClick={() => handleDelete(product.id)}>
-            Delete
-          </button>
-        </div>
-      ))}
+            <button onClick={() => handleDelete(product.id)}>
+              Delete
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

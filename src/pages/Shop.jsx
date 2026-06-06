@@ -1,13 +1,17 @@
 import { useState } from "react";
 import useProducts from "../hooks/useProducts";
 import SearchBar from "../components/SearchBar";
+import ProductList from "../components/ProductList";
 
 function Shop() {
   const { products, loading } = useProducts();
+   // state for search input value
   const [search, setSearch] = useState("");
 
+  // show loading state while fetching data
   if (loading) return <p>Loading products...</p>;
 
+// filters products in real-time based on user search input
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(search.toLowerCase())
   );
@@ -15,17 +19,10 @@ function Shop() {
   return (
     <div>
       <h1>Shop</h1>
-
+      {/* search bar for filtering products */}
       <SearchBar search={search} setSearch={setSearch} />
 
-      {filteredProducts.map((product) => (
-        <div key={product.id}>
-          <h3>{product.name}</h3>
-          <p>{product.description}</p>
-          <p>Origin: {product.origin}</p>
-          <p>${product.price}</p>
-        </div>
-      ))}
+      <ProductList products={filteredProducts} />
     </div>
   );
 }

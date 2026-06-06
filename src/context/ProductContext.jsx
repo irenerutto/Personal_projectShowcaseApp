@@ -6,7 +6,7 @@ export function ProductProvider({ children }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // GET all products ONCE
+ // fetch all products once when app loads
   useEffect(() => {
     fetch("http://localhost:3001/products")
       .then((res) => res.json())
@@ -17,6 +17,7 @@ export function ProductProvider({ children }) {
   }, []);
 
   return (
+    // stores products globally for all components
     <ProductContext.Provider
       value={{ products, setProducts, loading }}
     >

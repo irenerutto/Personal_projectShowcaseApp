@@ -22,7 +22,7 @@ function AddProduct() {
       ...form,
       price: Number(form.price),
     };
-
+// sends new product to backend and updates global state
     fetch("http://localhost:3001/products", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -32,7 +32,7 @@ function AddProduct() {
       .then((data) => {
         setProducts([...products, data]);
       });
-
+     // reset form after successful submission
     setForm({
       name: "",
       description: "",
