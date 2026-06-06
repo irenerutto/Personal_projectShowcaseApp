@@ -1,16 +1,73 @@
-# React + Vite
+# Rene’s Coffee House ☕
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Project Overview
+Rene’s Coffee House is a React-based coffee shop web application that allows users to browse coffee products, search items, and manage products through an admin dashboard.
 
-Currently, two official plugins are available:
+The project demonstrates modern React concepts including components, hooks, context API, routing, and CRUD operations using a mock JSON server.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🏠 Home Page
+- Displays welcome message and overview of the coffee shop
 
-## Expanding the ESLint configuration
+### 🛍️ Shop Page
+- Displays all coffee products
+- Search functionality to filter products by name
+- Responsive product grid layout
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🧑‍💼 Admin Dashboard
+- View all products
+- Edit product price
+- Delete products
+- Manage inventory in real-time
+
+### ➕ Add Product Page
+- Add new coffee products
+- Sends POST request to JSON server
+
+---
+
+## ⚙️ Technologies Used
+- React
+- React Router DOM
+- Context API
+- useState & useEffect Hooks
+- JSON Server (mock backend)
+- CSS Modules
+
+---
+
+## 📦 CRUD Operations
+- **Create:** Add new product
+- **Read:** Fetch and display products
+- **Update:** Edit product price
+- **Delete:** Remove product
+
+---
+
+## 🧠 Key Concepts Demonstrated
+- Component-based architecture
+- State management with hooks
+- Global state using Context API
+- Client-side routing
+- Form handling
+- API communication (fetch)
+
+---
+## 🔮 Future Improvements
+
+* Add user authentication and role-based access for administrators.
+* Improve form validation when adding new products.
+* Add product images for a more engaging shopping experience.
+* Implement product sorting by price and origin.
+* Add a shopping cart and checkout functionality.
+* Connect the application to a real backend database instead of a mock JSON server.
+* Expand test coverage for CRUD operations and Context API functionality.
+
+---
+
+## 👨‍💻 Author
+Irene Rutto (Student Project) 
+
