@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Vanilla Bean",
+      "description": "Medium Roast with smooth flavor",
+      "origin": "Colombia",
+      "price": 10
+    },
+    {
+      "id": 2,
+      "name": "House Blend",
+      "description": "Dark roast with rich body",
+      "origin": "Kenya",
+      "price": 6
+    },
+    {
+      "id": 3,
+      "name": "Espresso Roast",
+      "description": "Strong and bold espresso blend",
+      "origin": "Brazil",
+      "price": 12
+    },
+    {
+      "id": 4,
+      "name": "Caramel Macchiato Blend",
+      "description": "Sweet and balanced coffee blend",
+      "origin": "Ethiopia",
+      "price": 11
+    },
+    {
+      "id": 5,
+      "name": "Mocha Dark Roast",
+      "description": "Rich chocolate notes with deep roast",
+      "origin": "Guatemala",
+      "price": 13
+    },
+    {
+      "id": 6,
+      "name": "Colombian Supreme",
+      "description": "Bright acidity with smooth finish",
+      "origin": "Colombia",
+      "price": 9
+    }
+  ]
+}
