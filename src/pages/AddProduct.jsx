@@ -22,8 +22,13 @@ function AddProduct() {
       ...form,
       price: Number(form.price),
     };
-// sends new product to backend and updates global state
-    fetch("http://localhost:3001/products", {
+
+    // sends new product to backend and updates global state
+    const API_URL = import.meta.env.DEV
+      ? "http://localhost:3001"
+      : "https://coffee-api-v9mq.onrender.com";
+
+    fetch(`${API_URL}/products`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newProduct),
@@ -32,7 +37,8 @@ function AddProduct() {
       .then((data) => {
         setProducts([...products, data]);
       });
-     // reset form after successful submission
+
+    // reset form after successful submission
     setForm({
       name: "",
       description: "",
