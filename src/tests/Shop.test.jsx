@@ -1,7 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import Shop from "../pages/Shop";
 
-test("renders shop page", () => {
+test("renders shop loading state", () => {
   render(<Shop />);
-  expect(screen.getByText(/shop/i)).toBeInTheDocument();
+
+  expect(
+    screen.getByText(/loading products/i)
+  ).toBeInTheDocument();
 });

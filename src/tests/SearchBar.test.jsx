@@ -1,8 +1,9 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+import { vi } from "vitest";
 import SearchBar from "../components/SearchBar";
 
 test("updates search input", () => {
-  const setSearch = jest.fn();
+  const setSearch = vi.fn();
 
   render(<SearchBar search="" setSearch={setSearch} />);
 

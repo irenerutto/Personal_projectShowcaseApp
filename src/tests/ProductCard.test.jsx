@@ -14,6 +14,6 @@ test("renders product information", () => {
 
   expect(screen.getByText("Vanilla Bean")).toBeInTheDocument();
   expect(screen.getByText("Medium Roast")).toBeInTheDocument();
-  expect(screen.getByText("Colombia")).toBeInTheDocument();
-  expect(screen.getByText("$10")).toBeInTheDocument();
+  expect(screen.getByText(/origin:\s*colombia/i)).toBeInTheDocument();
+  expect(screen.getByText(/\$10/)).toBeInTheDocument();
 });

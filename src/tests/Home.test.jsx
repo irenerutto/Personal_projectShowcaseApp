@@ -5,6 +5,6 @@ test("renders coffee house title", () => {
   render(<Home />);
 
   expect(
-    screen.getByText(/Rene's Coffee House/i)
+    screen.getByRole("heading", { name: /rene's coffee house/i })
   ).toBeInTheDocument();
 });
