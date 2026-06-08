@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from "react";
-import useProducts from "../hooks/useProducts";
+import { useState, useRef, useEffect } from 'react';
+import useProducts from '../hooks/useProducts';
 
 function AddProduct() {
   const { products, setProducts } = useProducts();
