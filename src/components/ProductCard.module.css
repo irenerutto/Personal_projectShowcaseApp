@@ -1,25 +1,26 @@
 .card {
   background: #ffffff;
-  padding: 16px;
-  margin: 10px;
+  padding: 18px;
   width: 260px;
+  margin: 10;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   text-align: center;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .card h3 {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: #3b2f2f;
 }
 
 .card p {
-  margin: 4px 0;
+  margin: 6px 0;
   font-size: 14px;
 }
 
@@ -30,9 +31,11 @@
   border-radius: 6px;
   background: #6f4e37;
   color: white;
-  transition: 0.2s;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .button:hover {
   background: #563a2a;
+  transform: translateY(-1px);
 }

@@ -185,14 +185,14 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f3f0ea;
+  background: #f7f3ef;
   color: #2b2b2b;
 }
-
 h1 {
   text-align: center;
   margin-top: 20px;
   color: #3b2f2f;
+  font-size: 32px;
 }
 
 button {
