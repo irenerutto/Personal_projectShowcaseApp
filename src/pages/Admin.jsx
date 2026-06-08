@@ -6,22 +6,29 @@ function Admin() {
   const { products, setProducts } = useProducts();
   const [editId, setEditId] = useState(null);
   const [newPrice, setNewPrice] = useState("");
-// deletes product from backend and updates UI immediately
+
+  const API_URL = import.meta.env.DEV
+    ? "http://localhost:3001"
+    : "https://coffee-api-v9mq.onrender.com";
+
+  // deletes product from backend and updates UI immediately
   const handleDelete = (id) => {
-    fetch(`http://localhost:3001/products/${id}`, {
+    fetch(`${API_URL}/products/${id}`, {
       method: "DELETE",
     });
 
     setProducts(products.filter((p) => p.id !== id));
   };
-// enables edit mode for selected product
+
+  // enables edit mode for selected product
   const startEdit = (product) => {
     setEditId(product.id);
     setNewPrice(product.price);
   };
-// updates product price in backend and local state
+
+  // updates product price in backend and local state
   const saveEdit = (id) => {
-    fetch(`http://localhost:3001/products/${id}`, {
+    fetch(`${API_URL}/products/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ price: newPrice }),
